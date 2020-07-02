@@ -1,14 +1,16 @@
-FROM centos:7
+FROM ubi7-minimal
 EXPOSE 7681
 
 ENTRYPOINT ["/usr/bin/ttyd"]
 CMD ["bash"]
 WORKDIR /workspace
 
-RUN yum -y install wget jq vim-enhanced nano && \
+RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm && \
+      microdnf -y install gzip tar wget jq vim-enhanced nano && \
       chmod 775 /workspace && \
       wget https://github.com/tsl0922/ttyd/releases/download/1.6.1/ttyd_linux.x86_64 -O /usr/bin/ttyd && \
-      chmod 755 /usr/bin/ttyd
+      chmod 755 /usr/bin/ttyd && \
+      microdnf clean
 
 RUN curl -sL -o /tmp/oc.tar.gz https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz && \
 tar -C /tmp -xf /tmp/oc.tar.gz --no-same-owner && \
