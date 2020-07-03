@@ -39,6 +39,9 @@ chmod +x /usr/local/bin/odo
 RUN curl -sL -o /usr/local/bin/kn https://storage.googleapis.com/knative-nightly/client/latest/kn-linux-amd64 && \
 chmod +x /usr/local/bin/kn
 
+RUN curl -sL -o /usr/local/bin/helm https://mirror.openshift.com/pub/openshift-v4/clients/helm/latest/helm-linux-amd64 && \
+chmod +x /usr/local/bin/helm
+
 
 USER 1001
 
