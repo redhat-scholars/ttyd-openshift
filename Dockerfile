@@ -1,4 +1,4 @@
-FROM ubi7-minimal
+FROM registry.access.redhat.com/ubi7/ubi-minimal
 EXPOSE 7681
 
 ENTRYPOINT ["/usr/bin/ttyd"]
