@@ -21,7 +21,7 @@ Ruby? Sure, why not.
 
 * Run it locally with `podman` or `docker` or your favorite OCI runtime:
     
-        podman run -p 7681:7681 -it quay.io/thoraxe/ttyd-openshift
+        podman run -p 7681:7681 -it quay.io/redhat-scholars/ttyd-openshift:latest
 
 * Deploy it in OpenShift using `new-app` or the developer console
 
