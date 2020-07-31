@@ -26,3 +26,9 @@ Ruby? Sure, why not.
 * Deploy it in OpenShift using `new-app` or the developer console
 
 * Probably other ways! It's just a container image.
+
+## Securing ttyd with oauth-proxy
+
+* You can run oauth-proxy as a sidecar container to restrict access to authenticated users:
+
+         oc apply -f proxy-ttyd.yaml      
